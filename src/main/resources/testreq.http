@@ -1,0 +1,14 @@
+GET http://localhost:80/api/item?id=99
+Accept: application/json
+
+###
+POST http://localhost:8081/api/v1/register
+Content-Type: application/json
+
+{
+  "firstName": "Ramz",
+  "lastName":"Sultanov",
+  "password":"password",
+  "email":"admin@gmail.com"
+
+}
