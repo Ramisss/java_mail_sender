@@ -23,8 +23,8 @@ public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
-    private String userName;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
 
@@ -33,14 +33,12 @@ public class AppUser implements UserDetails {
     private Boolean locked;
     private Boolean enabled;
 
-    public AppUser(String name, String userName, String email, String password, AppUserRole appUserRole, Boolean locked, Boolean enabled) {
-        this.name = name;
-        this.userName = userName;
+    public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-        this.locked = locked;
-        this.enabled = enabled;
     }
 
     @Override
@@ -50,6 +48,7 @@ public class AppUser implements UserDetails {
         return Collections.singletonList(authority);
     }
 
+
     @Override
     public String getPassword() {
         return password;
@@ -57,7 +56,7 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userName;
+        return email;
     }
 
     @Override
