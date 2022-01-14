@@ -17,6 +17,6 @@ public class EmailValidator implements Predicate<String> {
     @Override
     public boolean test(String s) {
 //        TO DO:Regex to validate email
-        return false;
+        return true;
     }
 }
